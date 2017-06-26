@@ -16,4 +16,4 @@ Debian-like:
 Usage
 =====
 
-`./configcompare.py file1.conf file2.conf`
+`./confcomp.py file1.conf file2.conf`
