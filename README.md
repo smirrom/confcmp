@@ -1,4 +1,4 @@
-# configcompare - Config comparsion utility script
+# confcomp - Config comparsion utility script
 Description
 ===========
 
