@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import re
+import re, sys
 from tabulate import tabulate
 
 def isParameterExist(conf, parameter):
@@ -20,8 +20,17 @@ def paramlist_difference(list1, list2):
 
 valid_items=re.compile("^(?P<parameter>\w+)(?:\s+)?=(?:\s+)(?P<value>(?:'(?:.*)')|(?:\S+))", re.MULTILINE)
 
-conf1text = open("pg94.conf", "r").read()
-conf2text = open("pg96.conf", "r").read()
+
+if len (sys.argv) < 3:
+   print('Not enough parameters')
+   exit(1)
+
+filename1 = sys.argv[1]
+filename2 = sys.argv[2]
+
+
+conf1text = open(filename1, "r").read()
+conf2text = open(filename2, "r").read()
 
 m = valid_items.findall(conf1text)
 if m:
