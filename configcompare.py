@@ -17,9 +17,7 @@ def paramlist_difference(list1, list2):
             diff_list.append(item)
     return diff_list
 
-
 valid_items=re.compile("^(?P<parameter>\w+)(?:\s+)?=(?:\s+)(?P<value>(?:'(?:.*)')|(?:\S+))", re.MULTILINE)
-
 
 if len (sys.argv) < 3:
    print('Not enough parameters')
@@ -27,7 +25,6 @@ if len (sys.argv) < 3:
 
 filename1 = sys.argv[1]
 filename2 = sys.argv[2]
-
 
 conf1text = open(filename1, "r").read()
 conf2text = open(filename2, "r").read()
@@ -58,6 +55,4 @@ print ("\n",tabulate(paramlist_difference(conf1, conf2), headers=["Parameter", "
 
 print("\nUnique parameters of File 2:\n----------------------------")
 print ("\n",tabulate(paramlist_difference(conf2, conf1), headers=["Parameter", "Value"]))
-
-#print (lines1)
 
