@@ -50,17 +50,14 @@ for c1entry in conf1:
         if c1entry[0] == c2entry[0]:
             commonvalues.add((c1entry[0], c1entry[1], c2entry[1]))
 
-print("Общие параметры:\n----------------")
-print ("\n",tabulate(commonvalues, headers=["Параметр","Значение в файле 1", "Значение файле 2"]))
+print("Common parameters:\n----------------")
+print ("\n",tabulate(commonvalues, headers=["Parameter","Value in File 1", "Value in File 2"]))
 
-print("\nУникальне параметры файла 1:\n----------------------------")
-#for uentry in conf1.difference(conf2):
-#    print(uentry[0],'=',uentry[2])
+print("\nUnique parameters of File 1:\n----------------------------")
+print ("\n",tabulate(paramlist_difference(conf1, conf2), headers=["Parameter", "Value"]))
 
-print ("\n",tabulate(paramlist_difference(conf1, conf2), headers=["Параметр", "Значение"]))
-
-print("\nУникальне параметры файла 2:\n----------------------------")
-print ("\n",tabulate(paramlist_difference(conf2, conf1), headers=["Параметр", "Значение"]))
+print("\nUnique parameters of File 2:\n----------------------------")
+print ("\n",tabulate(paramlist_difference(conf2, conf1), headers=["Parameter", "Value"]))
 
 #print (lines1)
 
