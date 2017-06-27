@@ -17,7 +17,7 @@ def paramlist_difference(list1, list2):
             diff_list.append(item)
     return diff_list
 
-valid_items=re.compile("^(?P<parameter>\w+)(?:\s+)?=(?:\s+)(?P<value>(?:'(?:.*)')|(?:\S+))", re.MULTILINE)
+valid_items=re.compile("^(?:\s+)?(?P<parameter>\w+)(?:\s+)?=(?:\s+)(?P<value>(?:'(?:.*)')|(?:\S+))", re.MULTILINE)
 
 if len (sys.argv) < 3:
    print('Not enough parameters')
