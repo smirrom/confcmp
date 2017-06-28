@@ -1,7 +1,18 @@
 #!/usr/bin/python3
+# Created by Smirrom (smirrom@gmail.com)
+# GitHub: https://github.com/smirrom/confcomp
 
 import re, sys
 from tabulate import tabulate
+
+if '--help' in sys.argv or '-h' in sys.argv:
+   print('This is script that comparses two config file, uses parameter=value format. Comments ignored.\n\
+Usage: confcomp.py <config_file1> <config_file2>')
+   exit(0)
+
+if len (sys.argv) < 3:
+   print('Not enough parameters. Use -h or --help for help.')
+   exit(1)
 
 def isParameterExist(conf, parameter):
     exist=0
@@ -18,10 +29,6 @@ def paramlist_difference(list1, list2):
     return diff_list
 
 valid_items=re.compile("^(?:\s+)?(?P<parameter>\w+)(?:\s+)?=(?:\s+)(?P<value>(?:'(?:.*)')|(?:\S+))", re.MULTILINE)
-
-if len (sys.argv) < 3:
-   print('Not enough parameters')
-   exit(1)
 
 filename1 = sys.argv[1]
 filename2 = sys.argv[2]
